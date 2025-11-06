@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackIt | Conócenos</title>
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!--Favicon de la página web-->
+    <link rel="icon" type="image/png" href="./fotos/trackit_verde.png" sizes="16x16 32x32 64x64" />
+    <!--Estilos del documento-->
+    <link href="video_grande.css" rel="stylesheet">
+    <link href="estilos.css" rel="stylesheet">
+    <link rel="stylesheet"  type="text/css" href="controlbar.css">
+    <!--Preconexión con Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Fuente del documento-->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--Iconos de FontAwesome-->
+    <script src="https://kit.fontawesome.com/9de74ee228.js" crossorigin="anonymous"></script> 
+    <!--Configuracion de la URL-->
+    <script src="URL_config.js"></script>
+    <!--Script para el reproductor de vídeo-->
+	<script src="ControlBar.js"></script>
+	<!--<script src="dash.all.min.js"></script>-->
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto">TrackIt</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">TrackIt</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" aria-current="page" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="conocenos.html">Conócenos</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+    
+            <span id="connection-status" class="connection-status" role="status" aria-live="polite">
+                <span id="status-dot" class="status-dot disconnected" aria-hidden="true"></span>
+                <span id="status-text" class="status-text">Desconectado</span>
+            </span>
+            
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars" style="color: black;"></i>
+            </button>
+        </div>
+    </nav>
+    <!--End Nabvar-->
+
+    <div class="container2">
+        <!--<div class="button-container flex-container">
+            <button id="button1" class="btn btn-primary active" >HTML5</button>
+            <button id="button2" class="btn btn-secondary">MPEG DASH</button>
+        </div>-->
+        <div id="content1" style="display: block;">
+            <section class="hero-section">
+                <video id="videoFile" controls style="width: 100%; height: auto; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);border-radius: 10px;">
+                    <source src="" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                
+            </section>
+        </div>
+
+        <div id="content2" style="display: none;">
+            <section class="hero-section">
+                <div class="dash-video-player">
+                    <div class="videoContainer" id="videoContainer">
+                        <video id="VideoPlayer" controls></video>
+                        <div id="videoController" class="video-controller unselectable">
+                            <div id="playPauseBtn" class="btn-play-pause" title="Play/Pause">
+                                <span id="iconPlayPause" class="icon-play"></span>
+                            </div>
+                            <span id="videoTime" class="time-display">00:00:00</span>
+                            <div id="fullscreenBtn" class="btn-fullscreen control-icon-layout" title="Fullscreen">
+                                <span class="icon-fullscreen-enter"></span>
+                            </div>
+                            <div id="bitrateListBtn" class="control-icon-layout" title="Bitrate List">
+                                <span class="icon-bitrate"></span>
+                            </div>
+                            <input type="range" id="volumebar" class="volumebar" value="1" min="0" max="1" step=".01">
+                            <div id="muteBtn" class="btn-mute control-icon-layout" title="Mute">
+                                <span id="iconMute" class="icon-mute-off"></span>
+                            </div>
+                            <div id="trackSwitchBtn" class="control-icon-layout" title="A/V Tracks">
+                                <span class="icon-tracks"></span>
+                            </div>
+                            <div id="captionBtn" class="btn-caption control-icon-layout" title="Closed Caption">
+                                <span class="icon-caption"></span>
+                            </div>
+                            <span id="videoDuration" class="duration-display">00:00:00</span>
+                            <div class="seekContainer">
+                                <div id="seekbar" class="seekbar seekbar-complete">
+                                    <div id="seekbar-buffer" class="seekbar seekbar-buffer"></div>
+                                    <div id="seekbar-play" class="seekbar seekbar-play"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </section>
+        </div>
+
+    </div>
+
+    <!--<div class="container3">
+        <div id="alwaysVisibleContent" class="row flex-column-reverse flex-md-row">
+            <div class="col-md-8 order-md-1 order-2">
+                <div style="display: flex;">
+                    <div id="videoTitle" style="font-weight: bold; margin-right: 5px; padding: 0;"></div>
+                    <div id="videoCreatedAt" style="font-size: 12px; margin-left: 5px; padding: 0;"></div>
+                </div>
+                <p></p>
+                <div id="videoDescription" style="font-size: 12px;"></div>
+            </div>
+            <div class="col-md-4 d-flex flex-column align-items-start order-md-2 order-1">
+                <div class="row">
+                    <div class="col-12 d-flex align-items-center">
+                        <img id="userIcon" src="">
+                        <div id="userName" style="font-weight: bold;margin-left: 10px;"></div>
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="col-12 d-flex align-items-start">
+                        <div id="userIdentifier" style="font-size: 12px; margin-right:10px;"></div>
+                        <div id="userUsername" style="font-size: 12px; margin-right:10px;"></div>
+                        <div id="userEmail" style="font-size: 12px; margin-right:10px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    
+
+
+
+    <!--Carrusel de Servicios
+    <div id="carouselWrapper">
+        <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
+            <div class="carousel-inner" id="carouselContainer">
+            </div>
+    
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+-->
+   
+
+
+<div class="container_videos text-center" id="videos">
+  <h3 class="section-subtitle">TODO LO QUE NECESITAS, <span class="hero-line-tech">TODO EN UN SOLO LUGAR</span></h3>
+  <p>Revive las emisiones accediendo a <em>todas</em> las grabaciones y explora sus métricas asociadas.</p>
+  <div class="table-responsive">
+    <table id="fresh-table" class="table">
+      <thead>
+        <tr>
+          <th data-field="fecha" data-sortable="true">Fecha / Hora</th>
+          <th data-field="titulo" data-sortable="true">Título</th>
+          <th data-field="metrica" data-sortable="true" data-align="center">Coches detectados</th>
+          <th data-field="duracion" data-sortable="true" data-align="center">Duración</th>
+        </tr>
+      </thead>
+      <tbody id="videos-table-body">
+        <!-- Rellenado dinámico -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    <!--Footer de la página web-->
+    <div class="cuerpo-footer">
+        <footer>
+            <div class="container-footer">
+               <div class="section sobrenosotros">
+                    <h2>¿Quiénes somos?</h2>
+                    <p>TrackIt te conecta con un universo de historias que suceden en tiempo real. Observa, analiza y descubre cómo se mueven las personas y el tráfico en tu ciudad gracias al potencial del 5G y la inteligencia visual.<br></br>
+                    <em>Cada emisión es una ventana viva a la ciudad.</em><br></br>
+                    <em>Cada dato, una historia que contar.</em></p>
+                <ul class="social">
+                    <li><a href="mailto:UO288032@uniovi.es"><i class="fa-regular fa-envelope" aria-hidden="true" style="color: black; font-size: 20px;"></i></a></li>
+                    <li><a href="https://www.instagram.com/epigijon/"><i class="fa-brands fa-instagram" aria-hidden="true" style="color: black; font-size: 20px;"></i></a></li>
+                    <li><a href="https://twitter.com/epigijon"><i class="fa-brands fa-twitter" aria-hidden="true" style="color: black; font-size: 20px;"></i></a></li>
+                    <li><a href="https://www.linkedin.com/school/epigijon/posts/?feedView=all"><i class="fa-brands fa-linkedin" aria-hidden="true" style="color: black; font-size: 20px;"></i></a></li>
+                </ul>
+                </div>
+                <div class="section enlaces">
+                    <h2>Nuestras opciones </h2>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="conocenos.html">Conócenos</a></li>
+    
+                    </ul>
+                </div>
+                <div class="section contacto">
+                    <h2>Contacto</h2>
+                    <ul class="info">
+                        <li>
+                            <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                            <span>Campus de Gijón - Universidad de Oviedo<br>Periurbano - Rural, 33203<br> Gijón,
+                                Asturias</span>
+                        </li>
+                        <li>
+                            <span><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+                            <p><a href="tel:+34 985 18 22 30">985 18 22 30</a><br>
+                                
+                            </p>
+                        </li>
+                        <li>
+                            <span><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+                            <p><a href="mailto:UO288025@uniovi.es">trackit@gmail.com</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="copyrightText">
+            <p> Desarrollado por HIRED 5G — GRUPO 4 &copy; 2025.</p>
+        </div>
+        </div>
+        
+     <button id="scroll-up" aria-label="Volver arriba" title="Volver arriba">
+            <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+        </button>
+
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous">
+    </script>
+
+    <!--Script para cambiar el color de los enlaces del menú OFFCANVAS de la NAVBAR -->
+    <script>
+        var offcanvas = document.querySelector('.offcanvas');
+
+            offcanvas.addEventListener('show.bs.offcanvas', function () {
+                var navLinks = document.querySelectorAll('.offcanvas .nav-link, .offcanvas .nav-link.active');
+                navLinks.forEach(function (navLink) {
+                    navLink.style.color = 'black';
+                });
+            });
+
+            offcanvas.addEventListener('hide.bs.offcanvas', function () {
+                var navLinks = document.querySelectorAll('.offcanvas .nav-link, .offcanvas .nav-link.active');
+                navLinks.forEach(function (navLink) {
+                    navLink.style.color = '';
+                });
+            });
+    </script>
+
+     <!--Script para el botón de "volver arriba"-->
+    <script>
+        (function () {
+            const btn = document.getElementById('scroll-up');
+            if (!btn) return;
+            const THRESHOLD = 100; // px para mostrar el botón
+
+            function onScroll() {
+                if (window.scrollY > THRESHOLD) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+
+            // click: subir suave (respeta prefers-reduced-motion)
+            btn.addEventListener('click', () => {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    window.scrollTo(0, 0);
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            document.addEventListener('DOMContentLoaded', onScroll);
+        })();
+    </script>
+
+    <!--CÓDIGO JAVASCRIPT-->
+   <!-- <script>
+        // CÓDIGO JAVASCRIPT
+        // Variables globales
+    
+        // URL del servicio a probar
+        const url = window.serverSettings.url;
+    
+        // Se coge el identificador del vídeo desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const videoId = urlParams.get('videoId');
+        console.log(videoId);
+    
+        // Identificador del usuario creador del vídeo
+        //var userId;
+
+        // Elementos del documento que se van a modificar
+        var videoFile = document.getElementById('videoFile');
+        var videoTitle = document.getElementById('videoTitle');
+        var videoDescription = document.getElementById('videoDescription');
+        var videoCreatedAt = document.getElementById('videoCreatedAt');
+        
+
+        // Se realiza la petición al Backend para obtener el creador del vídeo
+        fetch(url + ":3000/video/" + videoId, {
+            method: 'GET',
+        })
+        // promesas encadenadas
+        .then(res => res.json())
+        // procesamiento de la respuesta
+        .then(json => {
+            // depuración en consola del navegador
+            //console.log(json);
+            // se guarda el identificador del usuario creador del vídeo
+            //userId = json.userId;
+            // se actualizan los elementos del documento
+            document.querySelector('#videoFile source').src = window.serverSettings.url + ":3000/video" + json.path;
+            document.querySelector('#videoFile').load();
+            videoTitle.innerHTML = json.title;
+            videoDescription.innerHTML = json.description;
+
+            // Crea un objeto Date con la fecha creada
+            const createdAt = new Date(json.createdAt);
+
+            // Formatea la fecha en el formato día/mes/año
+            const day = createdAt.getDate();
+            const month = createdAt.getMonth() + 1;  // Los meses en JavaScript comienzan en 0, por lo que debes agregar 1
+            const year = createdAt.getFullYear();
+            const formattedDate = `${day}/${month}/${year}`;
+
+            videoCreatedAt.innerHTML = formattedDate;
+            }) 
+            .catch((error) => {
+            console.log(error);
+            });
+
+
+            /*try{
+            const rutaDash = json.dash;
+            const videoUrl = window.serverSettings.url + ":8080" + rutaDash + "/stream.mpd";
+            var player = dashjs.MediaPlayer().create();
+            player.initialize(document.querySelector("#VideoPlayer"), videoUrl, false);
+            var controlbar = new ControlBar(player);
+            controlbar.initialize();
+            }catch(e){
+                console.log("No se ha podido cargar el vídeo en formato DASH " + e);
+            }*/
+           
+
+            /* Realiza la petición al backend para obtener la información del usuario
+            fetch(url + ":3000/user/" + userId, {
+                method: 'GET',
+            })
+                .then(res => res.json())
+                .then(user => {
+                    userIcon.src = window.serverSettings.url + ":8080" + user.icon;
+                    userName.innerHTML = user.name;
+                    userIdentifier.innerHTML = "Identificador: "+ user.id;
+                    userUsername.innerHTML = user.username;
+                    userEmail.innerHTML = user.email;
+                });
+            
+            //console.log(userId);
+            return fetch( url + ":3000/video/user/" + userId, {
+                method: 'GET',
+            });
+        })*/
+        /* promesas encadenadas
+        .then(res => res.json())
+        // procesamiento de la respuesta
+        .then(videos => {
+
+            videos.forEach((video, index) => {
+                // Crea la tarjeta
+                const carouselItem = document.createElement('div');
+                carouselItem.className = 'carousel-item';
+                if (index === 0) {
+                    carouselItem.className += ' active';
+                }
+                const card = document.createElement('div');
+                card.className = 'card';
+                const imgWrapper = document.createElement('div');
+                imgWrapper.className = 'img-wrapper';
+                const img = document.createElement('img');
+                img.src = `${window.serverSettings.url}:8080${video.thumbnail}`;
+                img.alt = video.title;
+                // Añade un controlador de eventos al hacer clic en la imagen para redirigir a la página del vídeo
+                img.addEventListener('click', function() {
+                    window.location.href = `./video_grande.html?videoId=${video.id}`;
+                });
+                const cardBody = document.createElement('div');
+                cardBody.className = 'card-body';
+                const cardTitle = document.createElement('h5');
+                cardTitle.className = 'card-title';
+                cardTitle.textContent = video.title;  // Establece el título del vídeo
+                const cardText = document.createElement('p');
+                cardText.className = 'card-text';
+                cardText.textContent = video.description;  // Establece la descripción del vídeo
+                cardBody.appendChild(cardTitle);
+                cardBody.appendChild(cardText);
+                imgWrapper.appendChild(img);
+                card.appendChild(imgWrapper);
+                card.appendChild(cardBody);
+                carouselItem.appendChild(card);
+                // Añade la tarjeta al carrusel
+                carouselContainer.appendChild(carouselItem);
+            });
+        })
+
+        .catch((error) => {
+            console.log(error);
+        });
+
+
+        */
+    </script>-->
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get('id');
+    console.log('ID del video:', videoId);
+
+    const videoFile = document.getElementById('videoFile');
+
+    async function loadVideo() {
+        try {
+            const baseUrl = window.serverSettings.url;
+            console.log('URL base del servidor:', baseUrl);
+            
+            // Petición al Backend
+            const response = await fetch(`${baseUrl}/video/${videoId}`);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const json = await response.json();
+            console.log('Respuesta del servidor:', json);
+
+            // Verificar que tenemos el nombre del video
+            if (!json || !json.nombre) {
+                throw new Error('Video no encontrado o formato de respuesta inválido');
+            }
+            
+            // Construir la URL del video (asumiendo que los videos están en backend/videos)
+            const videoUrl = `${baseUrl}/videos/${json.nombre}`;
+            console.log('URL final del video:', videoUrl);
+            
+            // Actualizar source del video
+            const videoSource = videoFile.querySelector('source');
+            if (!videoSource) {
+                throw new Error('Elemento source no encontrado en el video');
+            }
+
+            videoSource.src = videoUrl;
+            videoFile.load();
+
+            // Intentar reproducir
+            try {
+                await videoFile.play();
+            } catch (playError) {
+                console.log('Reproducción automática bloqueada:', playError);
+            }
+
+        } catch (error) {
+            console.error('Error detallado:', error);
+            videoFile.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <p>Error al cargar el video. ${error.message}</p>
+                </div>`;
+        }
+    }
+
+    // Iniciar carga cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!videoId) {
+            console.error('No se proporcionó ID de video en la URL');
+            videoFile.innerHTML = `
+                <div style="text-align: center; padding: 20px;">
+                    <p>Error: No se especificó un ID de video</p>
+                </div>`;
+            return;
+        }
+        loadVideo();
+    });
+</script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="carrusel.js"></script>
+
+    <!--<script>
+         var video1 = document.getElementById('videoFile');
+            var video2 = document.getElementById('VideoPlayer');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            let activeButton = document.getElementById('button1');
+        
+            document.getElementById('button1').addEventListener('click', function() {
+                changeContent('content1', this);
+                video1.play();
+                video2.pause();
+                video2.currentTime = 0;
+            });
+        
+            document.getElementById('button2').addEventListener('click', function() {
+                changeContent('content2', this);
+                video2.play();
+                video1.pause();
+                video1.currentTime = 0;
+            });
+
+            function changeContent(contentId, button) {
+                // Si el botón ya está activo, no hacer nada
+                if (activeButton === button) {
+                    return;
+                }
+        
+                // Cambiar el color del botón activo
+                if (activeButton) {
+                    activeButton.classList.remove('btn-primary');
+                    activeButton.classList.add('btn-secondary');
+                }
+                button.classList.remove('btn-secondary');
+                button.classList.add('btn-primary');
+                activeButton = button;
+        
+                // Ocultar el contenido que no se ha seleccionado
+                const otherContentId = contentId === 'content1' ? 'content2' : 'content1';
+                const otherContent = document.getElementById(otherContentId);
+                otherContent.style.display = 'none';
+        
+                // Mostrar el contenido seleccionado
+                const newContent = document.getElementById(contentId);
+                newContent.style.display = 'block';
+            }
+        });
+    </script>-->
+
+
+      <!--Script para la tabla de vídeos guardados-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js"></script>
+ 
+    <script>
+    (function () {
+    const API_VIDEOS = (window.serverSettings.url).replace(/\/+$/,'') + '/video';
+ 
+    function fmtDateShort(iso) {
+        const d = new Date(iso);
+        const datePart = d.toLocaleDateString('es-ES', { day:'2-digit', month:'short', year:'numeric' }).replace(/\./g,'');
+        const timePart = d.toLocaleTimeString('es-ES', { hour:'2-digit', minute:'2-digit' });
+        return `${datePart} · ${timePart}`;
+    }
+ 
+    function toTableRows(videos) {
+        return videos.map(v => ({
+        id_video: v.id_video,
+        fecha: fmtDateShort(v.fecha_hora),
+        titulo: `<a href="video_grande.html?id=${encodeURIComponent(v.id_video)}">Grabación ${v.id_video}</a>`,
+        metrica: v.metrica ?? 0,
+        duracion: `${v.duracion ?? 0} s`,
+        estado: v.procesado ? '<span class="status-procesado">Procesado</span>' : '<span class="status-pendiente">Pendiente</span>'
+        }));
+    }
+ 
+ 
+    function initTable(rows) {
+        const $table = $('#fresh-table');
+        if ($table.data('bootstrap.table')) $table.bootstrapTable('destroy');
+ 
+        $table.bootstrapTable({
+        data: rows,
+        toolbar: '.toolbar',
+        search: true,
+        info: false,
+        showRefresh: false,
+        showToggle: false,
+        showColumns: false,
+        pagination: true,
+        striped: true,
+        sortable: true,
+        pageSize: 5,
+        pageList: [5, 10, 25, 50, 100],
+        classes: 'table table-hover table-striped',
+        escape: false,
+        language: 'es-ES',
+        formatSearch: () => 'Buscar',
+        formatShowingRows: () => '',
+        formatRecordsPerPage: n => n + ' filas visibles',
+        formatNoMatches: () => 'No se encontraron resultados'
+        });
+ 
+    }
+ 
+    function loadFromApi() {
+        console.log('Cargando vídeos desde', API_VIDEOS);
+        fetch(API_VIDEOS, { cache: 'no-store' })
+        .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+        .then(data => initTable(Array.isArray(data) ? toTableRows(data) : []))
+        .catch(err => { console.error('Error cargando /video:', err); initTable([]); });
+    }
+ 
+ 
+    $(document).ready(loadFromApi);
+    })();
+    </script>
+
+</body>
+
+</html>
