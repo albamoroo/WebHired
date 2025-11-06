@@ -109,6 +109,9 @@ module.exports.registerVideo = async (outputPath) => {
     const relativePath = path.join('videos', fileName.replace('.avi', '.mp4'));
     const finalPath = path.join(videosDir, fileName.replace('.avi', '.mp4'));
 
+    // Crea el directorio si no existe
+    if (!fs.existsSync(videosDir)) fs.mkdirSync(videosDir);
+
     // Convierte a MP4
     await new Promise((resolve, reject) => {
         ffmpeg(path.join(__dirname, '../../', outputPath))

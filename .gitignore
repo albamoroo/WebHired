@@ -235,3 +235,4 @@ vite.config.ts.timestamp-*
 #EXTRAS
 *.mp4
 *.jpg
+*.avi
