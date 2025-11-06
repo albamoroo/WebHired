@@ -416,9 +416,9 @@
     <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js"></script>
  
     <script>
-
-    const url = window.serverSettings?.url ?? 'http://localhost';
+        
     (function () {
+    const API_VIDEOS = (window.serverSettings.url).replace(/\/+$/,'') + '/video';
  
     function fmtDateShort(iso) {
         const d = new Date(iso);
@@ -468,8 +468,8 @@
     }
  
     function loadFromApi() {
-        console.log('Cargando vídeos desde', url + ':3000/video');
-        fetch(url + ':3000/video', { cache: 'no-store' })
+        console.log('Cargando vídeos desde', API_VIDEOS);
+        fetch(API_VIDEOS, { cache: 'no-store' })
         .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
         .then(data => initTable(Array.isArray(data) ? toTableRows(data) : []))
         .catch(err => { console.error('Error cargando /video:', err); initTable([]); });
