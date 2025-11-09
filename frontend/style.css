@@ -222,7 +222,45 @@ html {
   margin-top: 10px;
   line-height: 1.5;
 }
-
+.metrics {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+ 
+.metric-card {
+  box-sizing: border-box;
+  background: #e6f9ee;
+  border: 2px solid #009970;
+  color: #009970;
+  border-radius: 12px;
+  height: 72px;
+  padding: 0 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 8px 20px rgba(17,24,39,0.1);
+  font-weight: 700;
+  /* Cada tarjeta ocupa ~33.333% menos espacio para el gap */
+  flex: 0 0 calc(33.333% - 8px);
+  text-align: center;
+  min-width: 0;
+}
+ 
+@media (max-width: 768px) {
+  .metric-card { flex: 0 0 calc(50% - 8px); }
+}
+ 
+@media (max-width: 520px) {
+  .metric-card { flex: 0 0 100%; height: 60px; padding: 0 12px; }
+}
 .hero-bottom p {
   font-weight: 500;
   color: #333;
