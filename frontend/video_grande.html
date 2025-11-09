@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrackIt | Conócenos</title>
+    <title>TrackIt | Vídeos</title>
     <!--Bootstrap CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -34,7 +34,7 @@
     
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand me-auto">TrackIt</a>
+            <a class="navbar-brand me-auto" href="index.html">TrackIt</a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -68,13 +68,9 @@
     <!--End Nabvar-->
 
     <div class="container2">
-        <!--<div class="button-container flex-container">
-            <button id="button1" class="btn btn-primary active" >HTML5</button>
-            <button id="button2" class="btn btn-secondary">MPEG DASH</button>
-        </div>-->
         <div id="content1" style="display: block;">
             <section class="hero-section">
-                <video id="videoFile" controls style="width: 100%; height: auto; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);border-radius: 10px;">
+                <video id="videoFile" controls style="width: 95%; height: auto; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);border-radius:10px;">
                     <source src="" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
@@ -118,62 +114,51 @@
                         </div>
                     </div>
                 </div>
-                
-                
             </section>
         </div>
 
     </div>
 
-    <!--<div class="container3">
-        <div id="alwaysVisibleContent" class="row flex-column-reverse flex-md-row">
-            <div class="col-md-8 order-md-1 order-2">
-                <div style="display: flex;">
-                    <div id="videoTitle" style="font-weight: bold; margin-right: 5px; padding: 0;"></div>
-                    <div id="videoCreatedAt" style="font-size: 12px; margin-left: 5px; padding: 0;"></div>
-                </div>
-                <p></p>
-                <div id="videoDescription" style="font-size: 12px;"></div>
+    <div class="container3">
+         
+    <div id="alwaysVisibleContent" class="row flex-column flex-md-row justify-content-center align-items-center">
+        <div class="col-md-9 d-flex justify-content-center gap-3 mb-3 mb-md-0">
+           <div class="card border-success rounded-3 text-center p-1 flex-fill shadow-sm"  style="background: linear-gradient(to bottom, #d4edda 40%, #ffffff 40%);">
+                <i class="fa-solid fa-car fa-lg text-success mb-2" style="padding:4px;"></i>
+                <div id="videoMetrica" class="fw-bold fs-6 text-dark">0</div>
+                <div class="text-muted small">Coches</div>
             </div>
-            <div class="col-md-4 d-flex flex-column align-items-start order-md-2 order-1">
-                <div class="row">
-                    <div class="col-12 d-flex align-items-center">
-                        <img id="userIcon" src="">
-                        <div id="userName" style="font-weight: bold;margin-left: 10px;"></div>
-                    </div>
-                </div>
-                <p></p>
-                <div class="row">
-                    <div class="col-12 d-flex align-items-start">
-                        <div id="userIdentifier" style="font-size: 12px; margin-right:10px;"></div>
-                        <div id="userUsername" style="font-size: 12px; margin-right:10px;"></div>
-                        <div id="userEmail" style="font-size: 12px; margin-right:10px;"></div>
-                    </div>
+
+            <div class="card border-success rounded-3 text-center p-1 flex-fill shadow-sm"  style="background: linear-gradient(to bottom, #d4edda 40%, #ffffff 40%);">
+                <i class="fa-solid fa-person fa-lg text-success mb-2" style="padding:4px;"></i>
+                <div class="fw-bold fs-6 text-dark">0</div>
+                <div class="text-muted small">Personas</div>
+            </div>
+
+            <div class="card border-success rounded-3 text-center p-1 flex-fill shadow-sm"  style="background: linear-gradient(to bottom, #d4edda 40%, #ffffff 40%);">
+                <i class="fa-solid fa-bicycle fa-lg text-success mb-2" style="padding:4px;"></i>
+                <div class="fw-bold fs-6 text-dark">0</div>
+                <div class="text-muted small">Bicicletas</div>
+            </div>
+
+        </div>
+
+        <!-- Información del video -->
+        <div class="col-md-3 d-flex flex-column align-items-start order-md-2 order-1">
+            <div class="row">
+                <div class="col-12 d-flex flex-column align-items-start">
+                    <div id="videoTitle" class="fs-6 fw-bold small mb-1 text-dark"></div>
+                    <div id="videoCreatedAt" class="small text-muted"></div>
+                    <div id="videoDuration2" class="small text-muted"></div>
                 </div>
             </div>
         </div>
-    </div>-->
-    
 
-
-
-    <!--Carrusel de Servicios
-    <div id="carouselWrapper">
-        <div id="carouselExampleControls" class="carousel" data-bs-ride="carousel">
-            <div class="carousel-inner" id="carouselContainer">
-            </div>
-    
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
     </div>
--->
+</div>
+
+    
+
    
 
 
@@ -304,262 +289,60 @@
         })();
     </script>
 
-    <!--CÓDIGO JAVASCRIPT-->
-   <!-- <script>
-        // CÓDIGO JAVASCRIPT
-        // Variables globales
     
-        // URL del servicio a probar
-        const url = window.serverSettings.url;
-    
-        // Se coge el identificador del vídeo desde la URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const videoId = urlParams.get('videoId');
-        console.log(videoId);
-    
-        // Identificador del usuario creador del vídeo
-        //var userId;
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const url = window.serverSettings.url;
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoId = urlParams.get('id');
 
-        // Elementos del documento que se van a modificar
-        var videoFile = document.getElementById('videoFile');
-        var videoTitle = document.getElementById('videoTitle');
-        var videoDescription = document.getElementById('videoDescription');
-        var videoCreatedAt = document.getElementById('videoCreatedAt');
-        
+            const videoFile = document.getElementById('videoFile');
+            const videoTitle = document.getElementById('videoTitle');
+            const videoCreatedAt = document.getElementById('videoCreatedAt');
+            const videoMetrica = document.getElementById('videoMetrica');
+            const videoDuration2 = document.getElementById('videoDuration2');
 
-        // Se realiza la petición al Backend para obtener el creador del vídeo
-        fetch(url + ":3000/video/" + videoId, {
-            method: 'GET',
-        })
-        // promesas encadenadas
-        .then(res => res.json())
-        // procesamiento de la respuesta
-        .then(json => {
-            // depuración en consola del navegador
-            //console.log(json);
-            // se guarda el identificador del usuario creador del vídeo
-            //userId = json.userId;
-            // se actualizan los elementos del documento
-            document.querySelector('#videoFile source').src = window.serverSettings.url + ":3000/video" + json.path;
-            document.querySelector('#videoFile').load();
-            videoTitle.innerHTML = json.title;
-            videoDescription.innerHTML = json.description;
-
-            // Crea un objeto Date con la fecha creada
-            const createdAt = new Date(json.createdAt);
-
-            // Formatea la fecha en el formato día/mes/año
-            const day = createdAt.getDate();
-            const month = createdAt.getMonth() + 1;  // Los meses en JavaScript comienzan en 0, por lo que debes agregar 1
-            const year = createdAt.getFullYear();
-            const formattedDate = `${day}/${month}/${year}`;
-
-            videoCreatedAt.innerHTML = formattedDate;
-            }) 
-            .catch((error) => {
-            console.log(error);
-            });
-
-
-            /*try{
-            const rutaDash = json.dash;
-            const videoUrl = window.serverSettings.url + ":8080" + rutaDash + "/stream.mpd";
-            var player = dashjs.MediaPlayer().create();
-            player.initialize(document.querySelector("#VideoPlayer"), videoUrl, false);
-            var controlbar = new ControlBar(player);
-            controlbar.initialize();
-            }catch(e){
-                console.log("No se ha podido cargar el vídeo en formato DASH " + e);
-            }*/
-           
-
-            /* Realiza la petición al backend para obtener la información del usuario
-            fetch(url + ":3000/user/" + userId, {
-                method: 'GET',
-            })
+            fetch(url + '/video/' + videoId)
                 .then(res => res.json())
-                .then(user => {
-                    userIcon.src = window.serverSettings.url + ":8080" + user.icon;
-                    userName.innerHTML = user.name;
-                    userIdentifier.innerHTML = "Identificador: "+ user.id;
-                    userUsername.innerHTML = user.username;
-                    userEmail.innerHTML = user.email;
-                });
-            
-            //console.log(userId);
-            return fetch( url + ":3000/video/user/" + userId, {
-                method: 'GET',
-            });
-        })*/
-        /* promesas encadenadas
-        .then(res => res.json())
-        // procesamiento de la respuesta
-        .then(videos => {
+                .then(json => {
+                    //console.log(json);
+                    //console.log("Entrando en .then, duración:", json.duracion);
+                    videoTitle.innerHTML = 'Grabación ' + json.id_video;
+                    document.querySelector('#videoFile source').src = window.serverSettings.url + '/videos/' + json.nombre;
+                    document.querySelector('#videoFile').load();
 
-            videos.forEach((video, index) => {
-                // Crea la tarjeta
-                const carouselItem = document.createElement('div');
-                carouselItem.className = 'carousel-item';
-                if (index === 0) {
-                    carouselItem.className += ' active';
-                }
-                const card = document.createElement('div');
-                card.className = 'card';
-                const imgWrapper = document.createElement('div');
-                imgWrapper.className = 'img-wrapper';
-                const img = document.createElement('img');
-                img.src = `${window.serverSettings.url}:8080${video.thumbnail}`;
-                img.alt = video.title;
-                // Añade un controlador de eventos al hacer clic en la imagen para redirigir a la página del vídeo
-                img.addEventListener('click', function() {
-                    window.location.href = `./video_grande.html?videoId=${video.id}`;
-                });
-                const cardBody = document.createElement('div');
-                cardBody.className = 'card-body';
-                const cardTitle = document.createElement('h5');
-                cardTitle.className = 'card-title';
-                cardTitle.textContent = video.title;  // Establece el título del vídeo
-                const cardText = document.createElement('p');
-                cardText.className = 'card-text';
-                cardText.textContent = video.description;  // Establece la descripción del vídeo
-                cardBody.appendChild(cardTitle);
-                cardBody.appendChild(cardText);
-                imgWrapper.appendChild(img);
-                card.appendChild(imgWrapper);
-                card.appendChild(cardBody);
-                carouselItem.appendChild(card);
-                // Añade la tarjeta al carrusel
-                carouselContainer.appendChild(carouselItem);
-            });
-        })
+                    const durationseconds = json.duracion ?? 0;
+                    let duracionFormatted;
+                    if (durationseconds >= 60){
+                        const minutos = Math.floor(durationseconds / 60);
+                        const segundos = durationseconds % 60;
+                        duracionFormatted = `${minutos} minutos ${segundos} segundos`;
+                    } else {
+                        duracionFormatted = `${durationseconds} segundos`;
+                    }
+                    videoDuration2.innerHTML = 'Duración: ' + duracionFormatted;
 
-        .catch((error) => {
-            console.log(error);
+                    const createdAt = new Date(json.fecha_hora);
+                    const fechaFormateada = createdAt.toLocaleDateString('es-ES', {
+                        day: '2-digit',
+                        month: 'long',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                    });
+                    
+                    videoCreatedAt.innerHTML = fechaFormateada;
+                    videoMetrica.innerHTML = (json.metrica ?? 0);
+                })
+                .catch(error => console.error(error));
         });
+    </script>
 
 
-        */
-    </script>-->
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const videoId = urlParams.get('id');
-    console.log('ID del video:', videoId);
-
-    const videoFile = document.getElementById('videoFile');
-
-    async function loadVideo() {
-        try {
-            const baseUrl = window.serverSettings.url;
-            console.log('URL base del servidor:', baseUrl);
-            
-            // Petición al Backend
-            const response = await fetch(`${baseUrl}/video/${videoId}`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const json = await response.json();
-            console.log('Respuesta del servidor:', json);
-
-            // Verificar que tenemos el nombre del video
-            if (!json || !json.nombre) {
-                throw new Error('Video no encontrado o formato de respuesta inválido');
-            }
-            
-            // Construir la URL del video (asumiendo que los videos están en backend/videos)
-            const videoUrl = `${baseUrl}/videos/${json.nombre}`;
-            console.log('URL final del video:', videoUrl);
-            
-            // Actualizar source del video
-            const videoSource = videoFile.querySelector('source');
-            if (!videoSource) {
-                throw new Error('Elemento source no encontrado en el video');
-            }
-
-            videoSource.src = videoUrl;
-            videoFile.load();
-
-            // Intentar reproducir
-            try {
-                await videoFile.play();
-            } catch (playError) {
-                console.log('Reproducción automática bloqueada:', playError);
-            }
-
-        } catch (error) {
-            console.error('Error detallado:', error);
-            videoFile.innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <p>Error al cargar el video. ${error.message}</p>
-                </div>`;
-        }
-    }
-
-    // Iniciar carga cuando el DOM esté listo
-    document.addEventListener('DOMContentLoaded', () => {
-        if (!videoId) {
-            console.error('No se proporcionó ID de video en la URL');
-            videoFile.innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <p>Error: No se especificó un ID de video</p>
-                </div>`;
-            return;
-        }
-        loadVideo();
-    });
-</script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
-    <!--<script>
-         var video1 = document.getElementById('videoFile');
-            var video2 = document.getElementById('VideoPlayer');
-
-        document.addEventListener('DOMContentLoaded', function() {
-            let activeButton = document.getElementById('button1');
-        
-            document.getElementById('button1').addEventListener('click', function() {
-                changeContent('content1', this);
-                video1.play();
-                video2.pause();
-                video2.currentTime = 0;
-            });
-        
-            document.getElementById('button2').addEventListener('click', function() {
-                changeContent('content2', this);
-                video2.play();
-                video1.pause();
-                video1.currentTime = 0;
-            });
-
-            function changeContent(contentId, button) {
-                // Si el botón ya está activo, no hacer nada
-                if (activeButton === button) {
-                    return;
-                }
-        
-                // Cambiar el color del botón activo
-                if (activeButton) {
-                    activeButton.classList.remove('btn-primary');
-                    activeButton.classList.add('btn-secondary');
-                }
-                button.classList.remove('btn-secondary');
-                button.classList.add('btn-primary');
-                activeButton = button;
-        
-                // Ocultar el contenido que no se ha seleccionado
-                const otherContentId = contentId === 'content1' ? 'content2' : 'content1';
-                const otherContent = document.getElementById(otherContentId);
-                otherContent.style.display = 'none';
-        
-                // Mostrar el contenido seleccionado
-                const newContent = document.getElementById(contentId);
-                newContent.style.display = 'block';
-            }
-        });
-    </script>-->
-
-
-      <!--Script para la tabla de vídeos guardados-->
+    <!--<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>-->
+    
+    <!--Script para la tabla de vídeos guardados-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://unpkg.com/bootstrap-table/dist/bootstrap-table.min.js"></script>
@@ -567,7 +350,7 @@
     <script>
         
     (function () {
-    const API_VIDEOS = (window.serverSettings.url).replace(/\/+$/,'') + ':3000/video';
+    const API_VIDEOS = (window.serverSettings.url).replace(/\/+$/,'') + '/video';
  
     function fmtDateShort(iso) {
         const d = new Date(iso);
@@ -577,13 +360,22 @@
     }
  
     function toTableRows(videos) {
+        function formatDuration(seconds) {
+            if (!seconds) return '0 s';
+            if (seconds < 60) return `${seconds} s`;
+            
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes} min ${remainingSeconds} s`;
+        }
+
         return videos.map(v => ({
-        id_video: v.id_video,
-        fecha: fmtDateShort(v.fecha_hora),
-        titulo: `<a href="video_grande.html?id=${encodeURIComponent(v.id_video)}">Grabación ${v.id_video}</a>`,
-        metrica: v.metrica ?? 0,
-        duracion: `${v.duracion ?? 0} s`,
-        estado: v.procesado ? '<span class="status-procesado">Procesado</span>' : '<span class="status-pendiente">Pendiente</span>'
+            id_video: v.id_video,
+            fecha: fmtDateShort(v.fecha_hora),
+            titulo: `<a href="video_grande.html?id=${encodeURIComponent(v.id_video)}">Grabación ${v.id_video}</a>`,
+            metrica: v.metrica ?? 0,
+            duracion: formatDuration(v.duracion),
+            estado: v.procesado ? '<span class="status-procesado">Procesado</span>' : '<span class="status-pendiente">Pendiente</span>'
         }));
     }
  
@@ -613,15 +405,23 @@
         formatRecordsPerPage: n => n + ' filas visibles',
         formatNoMatches: () => 'No se encontraron resultados'
         });
+        const $searchInput = $('.fixed-table-toolbar .search input');
+        $('.fixed-table-toolbar .search').css('position', 'relative');
+        const $icon = $('<i class="fa fa-search position-absolute" style="left:15px; top:50%; transform:translateY(-50%); color:#888;"></i>');
+        $('.fixed-table-toolbar .search').append($icon);
+        $searchInput.css('padding-left', '2.5rem');            
+   }
  
-    }
- 
-    function loadFromApi() {
+     function loadFromApi() {
         console.log('Cargando vídeos desde', API_VIDEOS);
         fetch(API_VIDEOS, { cache: 'no-store' })
-        .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
-        .then(data => initTable(Array.isArray(data) ? toTableRows(data) : []))
-        .catch(err => { console.error('Error cargando /video:', err); initTable([]); });
+            .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+            .then(data => {
+                // Filtrar sólo los videos procesados (procesado === 1)
+                const processed = Array.isArray(data) ? data.filter(v => Number(v.procesado) === 1) : [];
+                initTable(toTableRows(processed));
+            })
+            .catch(err => { console.error('Error cargando /video:', err); initTable([]); });
     }
  
  
