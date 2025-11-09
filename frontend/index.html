@@ -30,7 +30,7 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand me-auto">TrackIt</a>
+            <a class="navbar-brand me-auto" href="index.html">TrackIt</a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -66,160 +66,172 @@
     </nav>
     <!--End Nabvar-->
 
-<div class="hero text-center">
-    <h1 class="hero-title">
-        <span class="hero-line">Haz que tu visión sea el doble de inteligente</span>
-    </h1>
-    <p class="hero-subtitle">Observa y analiza el flujo de personas, coches y bicicletas en tiempo real.</p>
-    <a href="#video" class="btn hero-cta">Ver en directo <i class="fa-solid fa-chevron-right"></i></a>
-    
-</div>
+    <div class="hero text-center">
+        <h1 class="hero-title">
+            <span class="hero-line">Haz que tu visión sea el doble de inteligente</span>
+        </h1>
+        <p class="hero-subtitle">Observa y analiza el flujo de personas, coches y bicicletas en tiempo real.</p>
+        <a href="#video" class="btn hero-cta">Ver en directo <i class="fa-solid fa-chevron-right"></i></a>
+        
+    </div>
 
 
-<div class="container2 nuevo-hero">
-    <div class="hero-grid">
-        <div class="hero-left video-card">
-            <!--<div id="metric-car-count" style="position:absolute;top:470px;left:90px;z-index:2;background:rgba(0,0,0,0.6);color:#fff;padding:6px 12px;border-radius:8px;font-size:1.2em;display:none;">
-                Detecciones: <span id="car-count-value">0</span>
-            </div>-->
-            <!--<img id="video" src="" alt="Live feed" />-->
-            <img id="video" src="./fotos/novideo.png" data-placeholder="./fotos/novideo.png" alt="Live feed" />
-        </div>
-
-
-        <!-- Bloques pequeños de la derecha -->
-        <div class="hero-right">
-            <div class="hero-top">
-                <h2>Métricas en tiempo real</h2>
-                <p>Observa y analiza el flujo de personas, coches y bicicletas en tiempo real.
-                    TrackIt convierte cada transmisión en datos útiles impulsados por tecnología 5G.</p>
-                <p id="metric-car-count">
-                     <i class= "fa-solid fa-car tech-icon2"></i> <span id="car-count-value">0</span>
-                </p> 
-           
+    <div class="container2 nuevo-hero">
+        <div class="hero-grid">
+            <div class="hero-left video-card">
+                <!--<div id="metric-car-count" style="position:absolute;top:470px;left:90px;z-index:2;background:rgba(0,0,0,0.6);color:#fff;padding:6px 12px;border-radius:8px;font-size:1.2em;display:none;">
+                    Detecciones: <span id="car-count-value">0</span>
+                </div>-->
+                <!--<img id="video" src="" alt="Live feed" />-->
+                <img id="video" src="./fotos/novideo.png" data-placeholder="./fotos/novideo.png" alt="Live feed" />
             </div>
 
-            <div class="hero-bottom">
-                <p>Con la confianza de universidades e iniciativas tecnológicas como <strong>HIRED 5G</strong></p>
-                <div class="logos">
-                    <img src="./fotos/logo2.png" alt="Logo TrackIt">
-                    <img src="./fotos/uniovi.png" alt="Logo Uniovi">
-                    <img src="./fotos/hired5g.png" alt="Logo HIRED 5G">
+
+            <!-- Bloques pequeños de la derecha -->
+            <div class="hero-right">
+                <div class="hero-top">
+                    <h2>Métricas en tiempo real</h2>
+                    <p></p>
+                    <div class="col-md-12 d-flex justify-content-center gap-3 mb-3 mb-md-0">
+                        <div class="card border-success rounded-3 text-center p-1 flex-fill shadow-sm"  style="background: linear-gradient(to bottom, #d4edda 40%, #ffffff 40%);">
+                            <i class="fa-solid fa-car fa-lg text-success mb-2" style="padding:4px;"></i>
+                            <div id="car-count-value" class="fw-bold fs-6 text-dark">0</div>
+                            <div class="text-muted small">Coches</div>
+                        </div>
+
+                        <div class="card border-success rounded-3 text-center p-1 flex-fill shadow-sm"  style="background: linear-gradient(to bottom, #d4edda 40%, #ffffff 40%);">
+                            <i class="fa-solid fa-person fa-lg text-success mb-2" style="padding:4px;"></i>
+                            <div id = "person-count-value" class="fw-bold fs-6 text-dark">0</div>
+                            <div class="text-muted small">Personas</div>
+                        </div>
+
+                        <div class="card border-success rounded-3 text-center p-1 flex-fill shadow-sm"  style="background: linear-gradient(to bottom, #d4edda 40%, #ffffff 40%);">
+                            <i class="fa-solid fa-bicycle fa-lg text-success mb-2" style="padding:4px;"></i>
+                            <div id = "bicycle-count-value" class="fw-bold fs-6 text-dark">0</div>
+                            <div class="text-muted small">Bicicletas</div>
+                        </div>
+
+                    </div>
+    
+                </div>
+
+                <div class="hero-bottom">
+                    <div class="chart-card">
+                     <h2>Evolución de las métricas</h2>
+                     <canvas id="liveChart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<div class="marquee">
-    <div class="marquee-wrapper">
-        <div class="animate-marquee">
-            <div class="logo-item"><img src="fotos/2.png" alt="Logo 1"></div>
-            <div class="logo-item"><img src="fotos/epigijon.png" alt="Logo 2"></div>
-            <div class="logo-item"><img src="fotos/catedrathin5g.png" alt="Logo 3"></div>
-            <div class="logo-item"><img src="fotos/medialab.png" alt="Logo 4"></div>
+    <div class="marquee">
+        <div class="marquee-wrapper">
+            <div class="animate-marquee">
+                <div class="logo-item"><img src="fotos/2.png" alt="Logo 1"></div>
+                <div class="logo-item"><img src="fotos/epigijon.png" alt="Logo 2"></div>
+                <div class="logo-item"><img src="fotos/catedrathin5g.png" alt="Logo 3"></div>
+                <div class="logo-item"><img src="fotos/medialab.png" alt="Logo 4"></div>
+            </div>
+            <!-- segunda tira idéntica para bucle continuo -->
+            <div class="animate-marquee" aria-hidden="true">
+                <div class="logo-item"><img src="fotos/2.png" alt=""></div>
+                <div class="logo-item"><img src="fotos/epigijon.png" alt=""></div>
+                <div class="logo-item"><img src="fotos/catedrathin5g.png" alt=""></div>
+                <div class="logo-item"><img src="fotos/medialab.png" alt=""></div>
+            </div>
+            <!-- tercer bloque para bucle perfecto -->
+            <div class="animate-marquee" aria-hidden="true">
+                <div class="logo-item"><img src="fotos/2.png" alt=""></div>
+                <div class="logo-item"><img src="fotos/epigijon.png" alt=""></div>
+                <div class="logo-item"><img src="fotos/catedrathin5g.png" alt=""></div>
+                <div class="logo-item"><img src="fotos/medialab.png" alt=""></div>
+            </div>
+            <!-- gradientes de desvanecido en bordes -->
+            <div class="marquee-fade marquee-fade-left"></div>
+            <div class="marquee-fade marquee-fade-right"></div>
         </div>
-        <!-- segunda tira idéntica para bucle continuo -->
-        <div class="animate-marquee" aria-hidden="true">
-            <div class="logo-item"><img src="fotos/2.png" alt=""></div>
-            <div class="logo-item"><img src="fotos/epigijon.png" alt=""></div>
-            <div class="logo-item"><img src="fotos/catedrathin5g.png" alt=""></div>
-            <div class="logo-item"><img src="fotos/medialab.png" alt=""></div>
+    </div>
+
+    <!--- Parte tecnologías usadas-->   
+    <div class="container_tecnologias text-center">
+        <h3 class="section-subtitle">TECNOLOGÍAS QUE <span class="hero-line-tech">IMPULSAN TRACKIT</span></h3>
+        <p>Cada componente de nuestro sistema combina <em>hardware</em> y <em>software</em> de última generación. Desde la detección por <em>IA</em> hasta la transmisión 5G, todo está diseñado para ofrecer un análisis lo más preciso posible y en <b>tiempo real</b> del entorno urbano.</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col d-flex">
+        <div class="feature-card w-100">
+            <i class="fa-brands fa-python tech-icon"></i>
+            <h3 class="feature-title"><em>Python</em></h3>
+            <p class="feature-subtitle">Lenguaje principal para el desarrollo del <em>backend</em> y procesamiento de vídeo.</p>
         </div>
-        <!-- tercer bloque para bucle perfecto -->
-        <div class="animate-marquee" aria-hidden="true">
-            <div class="logo-item"><img src="fotos/2.png" alt=""></div>
-            <div class="logo-item"><img src="fotos/epigijon.png" alt=""></div>
-            <div class="logo-item"><img src="fotos/catedrathin5g.png" alt=""></div>
-            <div class="logo-item"><img src="fotos/medialab.png" alt=""></div>
         </div>
-        <!-- gradientes de desvanecido en bordes -->
-         <div class="marquee-fade marquee-fade-left"></div>
-         <div class="marquee-fade marquee-fade-right"></div>
+
+        <div class="col d-flex">
+        <div class="feature-card w-100">
+            <i class="fa-solid fa-bullseye tech-icon"></i>
+            <h3 class="feature-title"><em>Yolo</em></h3>
+            <p class="feature-subtitle">Modelo de detección de objetos basado en <em>IA</em> que identifica el tráfico.</p>
+        </div>
+        </div>
+
+        <div class="col d-flex">
+        <div class="feature-card w-100">
+            <i class="fa-solid fa-camera tech-icon"></i>
+            <h3 class="feature-title"><em>OpenCV</em></h3>
+            <p class="feature-subtitle">Biblioteca de visión por computadora para el procesamiento de imágenes y vídeos.</p>
+        </div>
+        </div>
+
+        <!-- fila 2 -->
+
+        <div class="col d-flex">
+        <div class="feature-card w-100">
+            <i class="fa-brands fa-raspberry-pi tech-icon"></i>
+            <h3 class="feature-title"><em>Raspberry Pi 5</em></h3>
+            <p class="feature-subtitle">Unidad de procesamiento local encargada de la captura de vídeo.</p>
+        </div>
+        </div>   
+
+        <div class="col d-flex">
+        <div class="feature-card w-100">
+            <i class="fa-solid fa-tower-cell tech-icon"></i>
+            <h3 class="feature-title"><em>5G</em></h3>
+            <p class="feature-subtitle">Transmisión de datos de alta velocidad mediante el módulo Quectel RM530N en red privada 5G Uniovi.</p>
+        </div>
+        </div>
+
+        <div class="col d-flex">
+        <div class="feature-card w-100">
+            <i class="fa-solid fa-database tech-icon"></i>
+            <h3 class="feature-title"><em>MySQL</em></h3>
+            <p class="feature-subtitle">Base de datos relacional para almacenar métricas, y datos históricos del sistema.</p>
+        </div>
+        </div>
     </div>
-</div>
-
- <!--- Parte tecnologías usadas-->   
-<div class="container_tecnologias text-center">
-    <h3 class="section-subtitle">TECNOLOGÍAS QUE <span class="hero-line-tech">IMPULSAN TRACKIT</span></h3>
-      <p>Cada componente de nuestro sistema combina <em>hardware</em> y <em>software</em> de última generación. Desde la detección por <em>IA</em> hasta la transmisión 5G, todo está diseñado para ofrecer un análisis lo más preciso posible y en <b>tiempo real</b> del entorno urbano.</p>
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    <div class="col d-flex">
-      <div class="feature-card w-100">
-        <i class="fa-brands fa-python tech-icon"></i>
-        <h3 class="feature-title"><em>Python</em></h3>
-        <p class="feature-subtitle">Lenguaje principal para el desarrollo del <em>backend</em> y procesamiento de vídeo.</p>
-      </div>
-    </div>
-
-    <div class="col d-flex">
-      <div class="feature-card w-100">
-        <i class="fa-solid fa-bullseye tech-icon"></i>
-        <h3 class="feature-title"><em>Yolo</em></h3>
-        <p class="feature-subtitle">Modelo de detección de objetos basado en <em>IA</em> que identifica el tráfico.</p>
-      </div>
-    </div>
-
-    <div class="col d-flex">
-      <div class="feature-card w-100">
-        <i class="fa-solid fa-camera tech-icon"></i>
-        <h3 class="feature-title"><em>OpenCV</em></h3>
-        <p class="feature-subtitle">Biblioteca de visión por computadora para el procesamiento de imágenes y vídeos.</p>
-      </div>
-    </div>
-
-    <!-- fila 2 -->
-
-    <div class="col d-flex">
-      <div class="feature-card w-100">
-        <i class="fa-brands fa-raspberry-pi tech-icon"></i>
-        <h3 class="feature-title"><em>Raspberry Pi 5</em></h3>
-        <p class="feature-subtitle">Unidad de procesamiento local encargada de la captura de vídeo.</p>
-      </div>
-    </div>   
-
-    <div class="col d-flex">
-      <div class="feature-card w-100">
-        <i class="fa-solid fa-tower-cell tech-icon"></i>
-        <h3 class="feature-title"><em>5G</em></h3>
-        <p class="feature-subtitle">Transmisión de datos de alta velocidad mediante el módulo Quectel RM530N en red privada 5G Uniovi.</p>
-      </div>
     </div>
 
-    <div class="col d-flex">
-      <div class="feature-card w-100">
-        <i class="fa-solid fa-database tech-icon"></i>
-        <h3 class="feature-title"><em>MySQL</em></h3>
-        <p class="feature-subtitle">Base de datos relacional para almacenar métricas, y datos históricos del sistema.</p>
-      </div>
+    <!-- Historial de vídeos grabados junto con sus métricas -->
+    <div class="container_videos text-center" id="videos">
+    <h3 class="section-subtitle">TODO LO QUE NECESITAS, <span class="hero-line-tech">TODO EN UN SOLO LUGAR</span></h3>
+    <p>Revive las emisiones accediendo a <em>todas</em> las grabaciones y explora sus métricas asociadas.</p>
+    <div class="table-responsive">
+        <table id="fresh-table" class="table">
+        <thead>
+            <tr>
+            <th data-field="fecha" data-sortable="true">Fecha / Hora</th>
+            <th data-field="titulo" data-sortable="true">Título</th>
+            <th data-field="metrica" data-sortable="true" data-align="center">Coches detectados</th>
+            <th data-field="duracion" data-sortable="true" data-align="center">Duración</th>
+            </tr>
+        </thead>
+        <tbody id="videos-table-body">
+            <!-- Rellenado dinámico -->
+        </tbody>
+        </table>
     </div>
-  </div>
-</div>
-
-<!-- Historial de vídeos grabados junto con sus métricas -->
-<div class="container_videos text-center" id="videos">
-  <h3 class="section-subtitle">TODO LO QUE NECESITAS, <span class="hero-line-tech">TODO EN UN SOLO LUGAR</span></h3>
-  <p>Revive las emisiones accediendo a <em>todas</em> las grabaciones y explora sus métricas asociadas.</p>
-  <div class="table-responsive">
-    <table id="fresh-table" class="table">
-      <thead>
-        <tr>
-          <th data-field="fecha" data-sortable="true">Fecha / Hora</th>
-          <th data-field="titulo" data-sortable="true">Título</th>
-          <th data-field="metrica" data-sortable="true" data-align="center">Coches detectados</th>
-          <th data-field="duracion" data-sortable="true" data-align="center">Duración</th>
-        </tr>
-      </thead>
-      <tbody id="videos-table-body">
-        <!-- Rellenado dinámico -->
-      </tbody>
-    </table>
-  </div>
-</div>
- 
-
-
+    </div>
+    
 
     <!--Footer de la página web-->
     <div class="cuerpo-footer">
@@ -304,16 +316,12 @@
             });
     </script>
 
-    <!--Script para el carrusel-->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="carrusel.js"></script>
-    
-        <!-- Script para cambiar entre vídeo en directo e imagen-->
+    <!--Socket.io JS-->
     <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 
     <!-- Script para cambiar el estado de Desconectado a Conectado o viceversa-->
    <script src="connection-status.js"></script> 
+
     <script>
         const socket = io();
         const img = document.getElementById("video");
@@ -349,7 +357,6 @@
     </script>
 
 
-    
     <!--Script para el botón de "volver arriba"-->
     <script>
         (function () {
@@ -428,13 +435,22 @@
     }
  
     function toTableRows(videos) {
+        function formatDuration(seconds) {
+            if (!seconds) return '0 s';
+            if (seconds < 60) return `${seconds} s`;
+            
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            return `${minutes} min ${remainingSeconds} s`;
+        }
+
         return videos.map(v => ({
-        id_video: v.id_video,
-        fecha: fmtDateShort(v.fecha_hora),
-        titulo: `<a href="video_grande.html?id=${encodeURIComponent(v.id_video)}">Grabación ${v.id_video}</a>`,
-        metrica: v.metrica ?? 0,
-        duracion: `${v.duracion ?? 0} s`,
-        estado: v.procesado ? '<span class="status-procesado">Procesado</span>' : '<span class="status-pendiente">Pendiente</span>'
+            id_video: v.id_video,
+            fecha: fmtDateShort(v.fecha_hora),
+            titulo: `<a href="video_grande.html?id=${encodeURIComponent(v.id_video)}">Grabación ${v.id_video}</a>`,
+            metrica: v.metrica ?? 0,
+            duracion: formatDuration(v.duracion),
+            estado: v.procesado ? '<span class="status-procesado">Procesado</span>' : '<span class="status-pendiente">Pendiente</span>'
         }));
     }
  
@@ -464,22 +480,129 @@
         formatRecordsPerPage: n => n + ' filas visibles',
         formatNoMatches: () => 'No se encontraron resultados'
         });
- 
+        
+    const $searchInput = $('.fixed-table-toolbar .search input');
+    $('.fixed-table-toolbar .search').css('position', 'relative');
+    const $icon = $('<i class="fa fa-search position-absolute" style="left:15px; top:50%; transform:translateY(-50%); color:#888;"></i>');
+    $('.fixed-table-toolbar .search').append($icon);
+    $searchInput.css('padding-left', '2.5rem'); 
+
     }
  
-    function loadFromApi() {
+     function loadFromApi() {
         console.log('Cargando vídeos desde', API_VIDEOS);
         fetch(API_VIDEOS, { cache: 'no-store' })
-        .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
-        .then(data => initTable(Array.isArray(data) ? toTableRows(data) : []))
-        .catch(err => { console.error('Error cargando /video:', err); initTable([]); });
+            .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+            .then(data => {
+                // Filtrar sólo los videos procesados (procesado === 1)
+                const processed = Array.isArray(data) ? data.filter(v => Number(v.procesado) === 1) : [];
+                initTable(toTableRows(processed));
+            })
+            .catch(err => { console.error('Error cargando /video:', err); initTable([]); });
     }
  
  
     $(document).ready(loadFromApi);
     })();
     </script>
- 
+
+     <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Script para el liveChart que permite ir mostrando la evolución de las métricas del vídeo en directo -->
+    <!-- <script>
+        const ctx = document.getElementById('liveChart').getContext('2d');
+
+        const data = {
+            labels: [], // El eje x será el tiempo
+            datasets:[
+                {
+                    label: 'Coches',
+                    data: [],
+                    borderColor: 'green',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    fill: true,
+                    tension: 0.3                    
+                },
+                {
+                    label: 'Personas',
+                    data: [],
+                    borderColor: 'blue',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    fill: true,
+                    tension: 0.3                    
+                },
+                {
+                    label: 'Bicicletas',
+                    data: [],
+                    borderColor: 'orange',
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                }
+            ]
+        };
+        const config={
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Tiempo (s)'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Número de detecciones'
+                        }
+                    }
+                }
+            }
+        };
+        const liveChart = new Chart(ctx, config);
+
+        function isVideoLive(){
+            const video = document.getElementById("video");
+            const placeholder = video.dataset.placeholder;
+            return video.src !== placeholder;
+        }
+
+        function getMetrics(){
+            return{
+                cars : parseInt(document.getElementById('car-count-value').innerText) || 0,
+                persons : parseInt(document.getElementById('person-count-value').innerText) || 0,
+                bicycles : parseInt(document.getElementById('bicycle-count-value').innerText) || 0
+                };
+        }
+
+
+        function updateChartfromCards(){
+            if (!isVideoLive()) return; // Solo se actualiza si hay transmisión en directo del video
+            
+            const now = new Date().toLocaleTimeString();
+            const metrics = getMetrics();
+            
+            data.labels.push(now);
+            data.datasets[0].data.push(metrics.cars);
+            data.datasets[1].data.push(metrics.persons);
+            data.datasets[2].data.push(metrics.bicycles);
+
+            // Se limita  a las últimas 10 mediciones
+            if (data.labels.length > 5) {
+                data.labels.shift();
+                data.datasets.forEach(dataset => dataset.data.shift());
+            }
+            liveChart.update();
+
+        }
+        setInterval(updateChartfromCards, 2000); // Actualiza cada 2 segundos
+    </script> -->
+
 
 </body>
 </html>
